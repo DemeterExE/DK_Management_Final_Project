@@ -52,9 +52,21 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True  # This allows all origins, for production use more restrictive settings
+# CORS_ALLOW_ALL_ORIGINS = True  # This allows all origins, for production use more restrictive settings
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:4200',
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+
+#  Defining specific origins or domains that are allowed
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:4200', # My Angular development server
+]
 
 ROOT_URLCONF = 'dk_management.urls'
 
