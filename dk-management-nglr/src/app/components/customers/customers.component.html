@@ -1,0 +1,24 @@
+<div class="container mx-auto">
+    <h1 class="text-2xl font-bold mb-4">Customers</h1>
+    <table class="min-w-full bg-white">
+      <thead>
+        <tr>
+          <th class="py-2">First Name</th>
+          <th class="py-2">Last Name</th>
+          <th class="py-2">Address</th>
+          <th class="py-2">Email</th>
+          <th class="py-2">Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td class="py-2">{{customer.firstname}}</td>
+          <td class="py-2">{{customer.lastname}}</td>
+          <td class="py-2">{{customer.address}}</td>
+          <td class="py-2">{{customer.email}}</td>
+          <td class="py-2">{{customer.phonenumber}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
