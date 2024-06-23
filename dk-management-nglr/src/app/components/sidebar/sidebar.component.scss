@@ -1,0 +1,12 @@
+.relative {
+    position: relative;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%; /* Adjust this value to position the dropdown below the button */
+    right: 0; /* Adjust this value to align the dropdown to the right of the button */
+    min-width: 150px; /* Adjust this value for desired width */
+    margin-top: 0.5rem; /* Adjust this value to control the space between the button and dropdown */
+  }
+ 

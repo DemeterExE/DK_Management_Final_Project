@@ -9,4 +9,16 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent { }
+export class SidebarComponent {
+  isDropdownVisible: boolean = false;
+  isSidebarVisible: boolean = false;
+
+  toggleDropdown(): void {
+    this.isDropdownVisible = !this.isDropdownVisible;
+  }
+
+  toggleSidebar(): void {
+     this.isSidebarVisible = !this.isSidebarVisible;
+  }
+  
+}
