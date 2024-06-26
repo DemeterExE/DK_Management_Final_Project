@@ -1,5 +1,6 @@
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
     table {
+      max-width: max-content;
       overflow-x: scroll !important;
     }
   }
