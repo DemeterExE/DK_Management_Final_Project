@@ -8,6 +8,7 @@ import { Order } from '../models/orders.models';
 })
 export class OrderService {
   private apiUrl = 'http://127.0.0.1:8000/api/orders/';
+  private apiUrlTotal = 'http://127.0.0.1:8000/api/orders/total/';
 
   constructor(private http: HttpClient) { }
 
@@ -25,5 +26,9 @@ export class OrderService {
 
   deleteOrder(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}${id}/`);
+  }
+
+  getTotalOrders(): Observable<{ total: number }> {
+    return this.http.get<{ total: number }>(this.apiUrlTotal);
   }
 }
