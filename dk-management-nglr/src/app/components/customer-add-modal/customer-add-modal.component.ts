@@ -3,6 +3,8 @@ import { Customer } from '../../models/customer.model';
 import { MaterialModule } from '../../material.module';
 import { MatDialogRef } from '@angular/material/dialog';
 import { CustomerService } from '../../services/customer.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-customer-add-modal',
@@ -26,7 +28,6 @@ export class CustomerAddModalComponent {
   ) {}
 
   onSave(): void {
-    console.log('Saving customer:', this.customer);
     this.customerService.addCustomer(this.customer).subscribe(
       (data: Customer) => {
         console.log('Customer added successfully:', data);

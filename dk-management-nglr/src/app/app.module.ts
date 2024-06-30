@@ -5,12 +5,14 @@ import { OrderService } from './services/order.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { CustomerAddModalComponent } from './components/customer-add-modal/customer-add-modal.component';
 
 @NgModule({
   declarations: [
   ],
   imports: [
+    BrowserModule,
     AppRoutingModule,
     CommonModule,
     NgFor,
@@ -19,7 +21,8 @@ import { CustomerAddModalComponent } from './components/customer-add-modal/custo
   ],
   providers: [
     CustomerService,
-    OrderService
+    OrderService,
+    CustomerAddModalComponent
   ],
   bootstrap: []
 })
