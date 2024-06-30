@@ -46,3 +46,8 @@ class OrderDetailAPIView(APIView):
         order = self.get_object(pk)
         order.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+class TotalOrdersAPIView(APIView):
+    def get(self, request):
+        total_orders = Order.objects.count()
+        return Response({'total': total_orders})
