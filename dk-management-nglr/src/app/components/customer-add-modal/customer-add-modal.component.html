@@ -1,20 +1,22 @@
-<form (ngSubmit)="onSave()">
-  <h1 mat-dialog-title>Add Customer</h1>
-  <mat-form-field>
+<mat-dialog-content (ngSubmit)="onSave()">
+  <div class="bg-blue-800 text-white p-5 mb-3 text-md font-semibold rounded-lg"> Edit Customer</div>
+  <mat-form-field appearance="fill" class="w-full">
     <input matInput placeholder="First Name" [(ngModel)]="customer.firstname" name="firstname" required>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="fill" class="w-full">
     <input matInput placeholder="Last Name" [(ngModel)]="customer.lastname" name="lastname" required>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="fill" class="w-full">
     <input matInput placeholder="Address" [(ngModel)]="customer.address" name="address" required>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="fill" class="w-full">
     <input matInput placeholder="Email" [(ngModel)]="customer.email" name="email" required>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="fill" class="w-full">
     <input matInput placeholder="Phone Number" [(ngModel)]="customer.phoneNumber" name="phoneNumber" required>
   </mat-form-field>
-  <button mat-button type="button" (click)="onCancel()">Cancel</button>
-  <button mat-button type="submit">Save</button>
-</form>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button class="bg-red-500 text-white rounded-lg py-2 px-3 hover:bg-red-400 font-semibold mr-3" (click)="onCancel()">Cancel</button>
+  <button class="bg-blue-600 rounded-lg py-2 px-3 text-white hover:bg-blue-500 font-semibold" (click)="onSave()">Save</button>
+</div>

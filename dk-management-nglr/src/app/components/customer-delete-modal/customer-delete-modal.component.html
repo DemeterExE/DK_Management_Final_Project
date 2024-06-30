@@ -1,8 +1,8 @@
-<h1 mat-dialog-title>Delete Customer</h1>
-<div mat-dialog-content>
-  <p>Are you sure you want to delete this customer?</p>
-</div>
+<mat-dialog-content>
+  <div class="bg-blue-800 text-white p-5 mb-3 text-md font-semibold rounded-xl">Delete Customer</div>
+  <p class="font-semibold">Are you sure you want to delete this customer?</p>
+</mat-dialog-content>
 <div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button (click)="onDelete()">Delete</button>
+  <button class="bg-red-500 text-white rounded-lg py-2 px-3 hover:bg-red-400 font-semibold mr-3" (click)="onCancel()">Cancel</button>
+  <button class="bg-blue-600 rounded-lg py-2 px-3 text-white hover:bg-blue-500 font-semibold" (click)="onDelete()">Delete</button>
 </div>

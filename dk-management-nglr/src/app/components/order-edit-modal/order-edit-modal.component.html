@@ -1,31 +1,32 @@
-<h1 mat-dialog-title>Edit Order</h1>
-<div mat-dialog-content>
-  <mat-form-field appearance="fill">
+<mat-dialog-content>
+  <div class="bg-blue-800 text-white p-5 mb-3 text-md font-semibold rounded-lg"> Edit Order</div>
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Full Name</mat-label>
     <input matInput [(ngModel)]="editedOrder.customer">
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Order Status</mat-label>
     <input matInput [(ngModel)]="editedOrder.status">
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Quantity</mat-label>
     <input matInput [(ngModel)]="editedOrder.quantity">
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Location</mat-label>
     <input matInput [(ngModel)]="editedOrder.location">
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Date</mat-label>
     <input matInput [(ngModel)]="editedOrder.date">
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Total</mat-label>
     <input matInput [(ngModel)]="editedOrder.total">
   </mat-form-field>
-</div>
+</mat-dialog-content>
 <div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button (click)="onSave()">Save</button>
+  <button class="bg-red-500 text-white rounded-lg py-2 px-3 hover:bg-red-400 font-semibold mr-3" (click)="onCancel()">Cancel</button>
+  <button class="bg-blue-600 rounded-lg py-2 px-3 text-white hover:bg-blue-500 font-semibold" (click)="onSave()">Save</button>
 </div>
+

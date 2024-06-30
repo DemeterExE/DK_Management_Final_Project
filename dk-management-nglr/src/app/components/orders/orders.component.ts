@@ -37,7 +37,7 @@ export class OrdersComponent implements OnInit {
 
   openEditDialog(order: Order): void {
     const dialogRef = this.dialog.open(OrderEditModalComponent, {
-      width: '250px',
+      width: '450px',
       data: { ...order }
     });
 
@@ -51,7 +51,7 @@ export class OrdersComponent implements OnInit {
   openDeleteDialog(id?: number): void {
     if (id !== undefined) {
       const dialogRef = this.dialog.open(OrderDeleteModalComponent, {
-        width: '250px',
+        width: '350px',
         data: { id }
       });
 
