@@ -1,6 +1,8 @@
+import { Customer } from "./customer.model";
+
 export interface Order {
     id?: number;
-    customer: number;
+    customer: Customer;
     status: 'pending' | 'shipped' | 'not_sent' | 'order_change' | 'order_canceled';
     quantity: number;
     location: string;

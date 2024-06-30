@@ -1,0 +1,26 @@
+<form>
+    <mat-form-field>
+      <input matInput placeholder="Customer First Name" [(ngModel)]="order.customer.firstname" name="customerFirstName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Customer Last Name" [(ngModel)]="order.customer.lastname" name="customerLastName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Order Status" [(ngModel)]="order.status" name="status" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Quantity" [(ngModel)]="order.quantity" name="quantity" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Location" [(ngModel)]="order.location" name="location" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Date" [(ngModel)]="order.date" name="date" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Total" [(ngModel)]="order.total" name="total" required>
+    </mat-form-field>
+    <button mat-button type="button" (click)="onCancel()">Cancel</button>
+    <button mat-button type="submit" (click)="onSave()">Save</button>
+  </form>
+  
