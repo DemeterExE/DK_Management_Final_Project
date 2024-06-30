@@ -10,12 +10,11 @@ class Order(models.Model):
         ('order_canceled', 'Order Canceled'),
     ]
 
-    #customer = models.CharField(max_length=225)
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='orders')
+    customer = models.CharField(max_length=80)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     quantity = models.IntegerField()
     location = models.CharField(max_length=225)
-    date = models.DateTimeField()
+    date = models.DateField()
     total = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

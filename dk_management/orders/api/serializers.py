@@ -5,7 +5,6 @@ from customers.api.serializers import CustomerSummarySerializer
 
 #If i don't want to write/get every model one by one.. i can just write it like this
 class OrderSerializer(serializers.ModelSerializer):
-    customer = CustomerSummarySerializer()
     class Meta:
         model = Order
         fields = "__all__"

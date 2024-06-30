@@ -67,7 +67,7 @@ export class OrdersComponent implements OnInit {
 
   openAddDialog(): void {
     const dialogRef = this.dialog.open(OrderAddModalComponent, {
-      width: '250px'
+      width: '450px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -75,9 +75,5 @@ export class OrdersComponent implements OnInit {
         this.orders.push(result);
       }
     });
-  }
-
-  getCustomerFullName(order: Order): string {
-    return `${order.customer.firstname} ${order.customer.lastname}`;
   }
 }

@@ -3,7 +3,6 @@ import { Order } from '../../models/orders.models';
 import { MatDialogRef } from '@angular/material/dialog';
 import { OrderService } from '../../services/order.service';
 import { MaterialModule } from '../../material.module';
-import { CustomerService } from '../../services/customer.service';
 
 @Component({
   selector: 'app-order-add-modal',
@@ -15,17 +14,11 @@ import { CustomerService } from '../../services/customer.service';
 
 export class OrderAddModalComponent {
   order: Order = {
-    customer: {
-      firstname: '',
-      lastname: '',
-      address: '',
-      email: '',
-      phoneNumber: ''
-    },
+    customer: '',
     status: 'pending',
     quantity: 0,
     location: '',
-    date: '',
+    date: new Date().toISOString(), // Initialize with current date
     total: 0
   };
 
@@ -35,9 +28,22 @@ export class OrderAddModalComponent {
   ) {}
 
   onSave(): void {
-    this.orderService.addOrder(this.order).subscribe(
+    console.log('Order before formatting:', this.order);
+  
+    // Ensure quantity and total are numbers
+    const formattedOrder: Order = {
+      ...this.order,
+      quantity: Number(this.order.quantity),
+      total: Number(this.order.total),
+      // Keep date as string in the desired format without altering the local time
+      date: new Date(this.order.date).toISOString().split('T')[0] // "YYYY-MM-DD"
+    };
+  
+    console.log('Order after formatting:', formattedOrder);
+  
+    this.orderService.addOrder(formattedOrder).subscribe(
       (data: Order) => {
-        console.log('Customer added successfully:', data);
+        console.log('Order added successfully:', data);
         this.dialogRef.close(data);
       },
       error => {
@@ -45,6 +51,7 @@ export class OrderAddModalComponent {
       }
     );
   }
+  
 
   onCancel(): void {
     this.dialogRef.close();
