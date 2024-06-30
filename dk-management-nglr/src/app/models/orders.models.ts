@@ -1,6 +1,6 @@
 export interface Order {
     id?: number;
-    customer: number;
+    customer: string;
     status: 'pending' | 'shipped' | 'not_sent' | 'order_change' | 'order_canceled';
     quantity: number;
     location: string;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Order } from '../models/orders.models';
 
 @Injectable({
   providedIn: 'root'
@@ -8,30 +9,21 @@ import { Observable } from 'rxjs';
 export class OrderService {
   private apiUrl = 'http://127.0.0.1:8000/api/orders/';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  // GET all orders
-  getOrders(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+  getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.apiUrl);
   }
 
-  // GET order by id
-  getOrderById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}${id}/`);
+  addOrder(order: Order): Observable<Order> {
+    return this.http.post<Order>(this.apiUrl, order);
   }
 
-  // POST a new order
-  createOrder(orderData: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, orderData);
+  updateOrder(order: Order): Observable<Order> {
+    return this.http.put<Order>(`${this.apiUrl}${order.id}/`, order);
   }
 
-  // PUT update an existing order
-  updateOrder(id: number, orderData: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}${id}/`, orderData);
-  }
-
-  // DELETE an order
-  deleteOrder(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}${id}/`);
+  deleteOrder(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}${id}/`);
   }
 }
