@@ -38,7 +38,7 @@ export class CustomersComponent implements OnInit {
 
   openEditDialog(customer: Customer): void {
     const dialogRef = this.dialog.open(CustomerEditModalComponent, {
-      width: '250px',
+      width: '450px',
       data: { ...customer }
     });
 
@@ -52,7 +52,7 @@ export class CustomersComponent implements OnInit {
   openDeleteDialog(id?: number): void {
     if (id !== undefined) {
       const dialogRef = this.dialog.open(CustomerDeleteModalComponent, {
-        width: '250px',
+        width: '350px',
         data: { id }
       });
 
@@ -68,7 +68,7 @@ export class CustomersComponent implements OnInit {
 
   openAddDialog(): void {
     const dialogRef = this.dialog.open(CustomerAddModalComponent, {
-      width: '250px'
+      width: '450px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
