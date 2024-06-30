@@ -46,3 +46,8 @@ class CustomerDetailAPIView(APIView):
         customer = self.get_object(pk)
         customer.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+class TotalCustomersAPIView(APIView):
+    def get(self, request):
+        total_customers = Customer.objects.count()
+        return Response({'total': total_customers})

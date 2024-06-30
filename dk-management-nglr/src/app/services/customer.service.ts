@@ -8,6 +8,7 @@ import { Customer } from '../models/customer.model';
 })
 export class CustomerService {
   private apiUrl = 'http://127.0.0.1:8000/api/customers/';
+  private apiUrlTotal = 'http://127.0.0.1:8000/api/customers/total/';
 
   constructor(private http: HttpClient) { }
 
@@ -25,5 +26,9 @@ export class CustomerService {
 
   deleteCustomer(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}${id}/`);
+  }
+  
+  getTotalCustomers(): Observable<{ total: number }> {
+    return this.http.get<{ total: number }>(this.apiUrlTotal);
   }
 }
