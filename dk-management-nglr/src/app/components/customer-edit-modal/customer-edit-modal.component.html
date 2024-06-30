@@ -1,32 +1,28 @@
 
-<div mat-dialog-content>
-  <mat-toolbar color="accent" style="background-color:rgb(169, 169, 244);"> Edit Order</mat-toolbar>
-  <mat-form-field appearance="fill">
+<mat-dialog-content>
+  <div class="bg-blue-800 text-white p-5 mb-3 text-md font-semibold rounded-lg"> Edit Customer</div>
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>First Name</mat-label>
-    <input 
-     matInput 
-     [(ngModel)]="editedCustomer.firstname"
-     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    >
+    <input matInput [(ngModel)]="editedCustomer.firstname">
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Last Name</mat-label>
     <input matInput [(ngModel)]="editedCustomer.lastname">
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Address</mat-label>
     <input matInput [(ngModel)]="editedCustomer.address">
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Email</mat-label>
     <input matInput [(ngModel)]="editedCustomer.email">
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="w-full">
     <mat-label>Phone Number</mat-label>
     <input matInput [(ngModel)]="editedCustomer.phoneNumber">
   </mat-form-field>
-</div>
+</mat-dialog-content>
 <div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button (click)="onSave()">Save</button>
+  <button class="bg-red-500 text-white rounded-lg py-2 px-3 hover:bg-red-400 font-semibold mr-3" (click)="onCancel()">Cancel</button>
+  <button class="bg-blue-600 rounded-lg py-2 px-3 text-white hover:bg-blue-500 font-semibold" (click)="onSave()">Save</button>
 </div>

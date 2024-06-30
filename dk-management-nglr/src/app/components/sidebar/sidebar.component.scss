@@ -10,3 +10,14 @@
     margin-top: 0.5rem; /* Adjust this value to control the space between the button and dropdown */
   }
  
+  /* Define active styles */
+.active-menu-item {
+  background-color: #6955db; /* Dark grey background */
+  color: #ffffff; /* White text color */
+  font-weight: bold; /* Bold font for emphasis */
+  color: white;
+    svg {
+      color: #ffffff;
+    }
+}
+
