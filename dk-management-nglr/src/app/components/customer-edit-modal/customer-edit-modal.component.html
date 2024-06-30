@@ -1,8 +1,13 @@
-<h1 mat-dialog-title>Edit Customer</h1>
+
 <div mat-dialog-content>
+  <mat-toolbar color="accent" style="background-color:rgb(169, 169, 244);"> Edit Order</mat-toolbar>
   <mat-form-field appearance="fill">
     <mat-label>First Name</mat-label>
-    <input matInput [(ngModel)]="editedCustomer.firstname">
+    <input 
+     matInput 
+     [(ngModel)]="editedCustomer.firstname"
+     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    >
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Last Name</mat-label>
